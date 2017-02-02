@@ -24,11 +24,8 @@ app.route('/Google')
   res.redirect('https://www.google.com/')
 })
 
-var server = app.listen(process.env.PORT || 8081, "localhost", function () {
-   var host = server.address().address
-   var port = server.address().port
-
-   console.log("Example app listening at http://%s:%s", host, port)
+app.listen(process.env.PORT || 8081, function () {
+   console.log("Manager server started successfully")
 })
 
 var helloWorldGETResponse = function (req, res) {
