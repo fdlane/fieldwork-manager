@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fdlane/fieldwork-manager/issues"
   },
-  "homepage": "https://github.com/fdlane/fieldwork-manager#readme"
+  "homepage": "https://github.com/fdlane/fieldwork-manager#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
 }
