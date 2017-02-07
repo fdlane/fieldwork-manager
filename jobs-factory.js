@@ -4,10 +4,10 @@ var usernames = ['YHI06858','BBS91751','YTR03897','BQR91547','UUF99345','MZJ9894
 
 module.exports = function generateJobs(){
   return{
-    createdBy: faker.random.arrayElement(usernames),
-    createdDate: faker.date.past(),
-    editedBy: faker.random.arrayElement(usernames),
-    editedDate: faker.date.past(),
+    createdBy: 'fieldwork-manager',
+    createdDate: new Date(),
+    editedBy: '',
+    editedDate: '',
     location: faker.address.streetAddress(),
     metaId: faker.random.number({min: 1000000000, max: 9999999999}),
     scheduleDate: faker.date.recent(),

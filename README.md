@@ -14,8 +14,13 @@ You will need the following things properly installed on your computer.
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Express](http://expressjs.com/)
 * [firebase-admin](https://www.npmjs.com/package/firebase-admin/)
+<<<<<<< Updated upstream
 * [Faker](https://www.npmjs.com/package/Faker)
 * [Moment](https://momentjs.com/)
+=======
+* [faker](https://www.npmjs.com/package/Faker)
+* [moment](https://momentjs.com/)
+>>>>>>> Stashed changes
 
 ## Installation
 
