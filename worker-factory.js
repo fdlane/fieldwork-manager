@@ -14,20 +14,12 @@ module.exports = function generateWorker(i){
   return {
     Username: usernames[i],
     AvailableDate: date,
-    createdBy: "seeder.js",
-    createdDate: faker.date.past(),
+    createdBy: "fieldwork-manager",
+    createdDate: new Date(),
     displayName: faker.name.lastName() + ", " + faker.name.firstName(),
-    editedBy: "seeder.js",
-    editedDate: faker.date.past(),
+    editedBy: "",
+    editedDate: null,
     isAvailable:  faker.random.boolean(),
-    lastJobUpdateDate: faker.date.recent(),
     jobCount: 10
   }
-  /*
-  afterCreate(worker, server) {
-    server.createList('job', 10, {
-      assignedTo: worker.username,
-    });
-    worker.save();
-  },*/
 };

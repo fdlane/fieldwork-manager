@@ -14,8 +14,8 @@ You will need the following things properly installed on your computer.
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Express](http://expressjs.com/)
 * [firebase-admin](https://www.npmjs.com/package/firebase-admin/)
-* [faker](https://www.npmjs.com/browse/keyword/faker/)
-* [moment](https://momentjs.com/)
+* [Faker](https://www.npmjs.com/package/Faker)
+* [Moment](https://momentjs.com/)
 
 ## Installation
 
@@ -34,4 +34,5 @@ You will need the following things properly installed on your computer.
 http://<[URL] or [localhost:8081 if running locally]>
 
   /hello-world?num=[#] - generates [#] 'HelloWorld' messages.
+
   /seed?num=[#] - generates [#] entries in the attached firebase database.
