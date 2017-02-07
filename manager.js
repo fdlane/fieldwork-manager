@@ -1,5 +1,18 @@
+var admin = require("firebase-admin");
 var express = require('express')
+const generateWorker = require('./worker-factory');
+const generateJobs = require('./jobs-factory');
+
 var app = express()
+var serviceAccount = "pstcc2017fieldwork-firebase-adminsdk-m19wq-d4b9d4ae7f.json";
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://pstcc2017fieldwork.firebaseio.com/"
+});
+
+var jobRef = admin.database().ref().child("jobs");
+var workerRef = admin.database().ref().child("workers");
 
 app.route('/')
 .get((req, res) => {
@@ -14,9 +27,34 @@ app.route('/HelloWorld')
   res.status(200).json({'response':'HelloWorld'})
 })
 
-app.route('/clear')
+app.route('/seed')
 .get((req, res) => {
 
+  var num = req.query.num;
+
+  if(num === undefined)
+    num = 1;
+
+  if(num > 15)
+    num = 15;
+
+  for(var i = 0; i < num; i++) {
+
+    var worker = generateWorker(i);
+    var job = generateJobs();
+
+    workerRef.push(worker);
+    jobRef.push(job);
+  };
+
+  res.status(200).send("seeded")
+})
+
+app.route('/clear')
+.get((req, res) => {
+  workerRef.remove();
+  jobRef.remove();
+  res.status(200).send("cleared")
 })
 
 app.route('/Google')

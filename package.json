@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/fdlane/fieldwork-manager#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "faker": "^3.1.0",
+    "moment": "^2.17.1"
   }
 }
