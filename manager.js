@@ -19,12 +19,12 @@ app.route('/')
   res.status(200).send('<h2>Manager Home</h2>')
 })
 
-app.route('/HelloWorld')
+app.route('/hello-world')
 .get((req, res) => {
   helloWorldGETResponse(req, res)
 })
 .head((req, res) => {
-  res.status(200).json({'response':'HelloWorld'})
+  res.status(200).json({'response':'Hello World!'})
 })
 
 app.route('/seed')
