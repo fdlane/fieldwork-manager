@@ -29,32 +29,14 @@ app.route('/hello-world')
 
 app.route('/seed')
 .get((req, res) => {
-
-  var num = req.query.num;
-
-  if(num === undefined)
-    num = 1;
-
-  if(num > 15)
-    num = 15;
-
-  for(var i = 0; i < num; i++) {
-
-    var worker = generateWorker(i);
-    var job = generateJobs();
-
-    workerRef.push(worker);
-    jobRef.push(job);
-  };
-
-  res.status(200).send("seeded")
+  seedGETResponse(req, res);
 })
 
 app.route('/clear')
 .get((req, res) => {
   workerRef.remove();
   jobRef.remove();
-  res.status(200).send("cleared")
+  res.status(200).send("cleared all entries!")
 })
 
 app.route('/Google')
@@ -79,4 +61,26 @@ var helloWorldGETResponse = function (req, res) {
     }
     res.status(200).send(helloWorld)
   }
+}
+
+var seedGETResponse = function (req, res) {
+
+  var num = req.query.num;
+
+  if(num === undefined)
+    num = 1;
+
+  if(num > 15)
+    num = 15;
+
+  for(var i = 0; i < num; i++) {
+
+    var worker = generateWorker(i);
+    var job = generateJobs();
+
+    workerRef.push(worker);
+    jobRef.push(job);
+  };
+
+  res.status(200).send("seeded " + num + " entries!")
 }
