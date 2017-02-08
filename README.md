@@ -16,8 +16,6 @@ You will need the following things properly installed on your computer.
 * [firebase-admin](https://www.npmjs.com/package/firebase-admin/)
 * [Faker](https://www.npmjs.com/package/Faker)
 * [Moment](https://momentjs.com/)
-* [faker](https://www.npmjs.com/package/Faker)
-* [moment](https://momentjs.com/)
 
 ## Installation
 
