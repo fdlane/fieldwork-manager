@@ -1,0 +1,7 @@
+{
+  "name": "manager",
+  "short_name": "manager",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
