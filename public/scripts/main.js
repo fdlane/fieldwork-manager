@@ -7,7 +7,7 @@ function FieldworkManager() {
   this.userPic = document.getElementById('user-pic');
   this.signOutButton = document.getElementById('sign-out');
   this.jobList = document.getElementById('jobs');
-  this.jobInput = document.getElementById('job');
+  this.workerList = document.getElementById('workers');
   this.userPic = document.getElementById('user-pic');
 
   this.signInButton.addEventListener('click', this.signIn.bind(this));
@@ -48,6 +48,7 @@ FieldworkManager.prototype.onAuthStateChanged = function(user) {
     this.signInButton.setAttribute('hidden', 'true');
 
     this.loadJobs();
+    this.loadWorkers();
   } else {
     this.userName.setAttribute('hidden', 'true');
     this.userPic.setAttribute('hidden', 'true');
@@ -57,13 +58,20 @@ FieldworkManager.prototype.onAuthStateChanged = function(user) {
 };
 
 FieldworkManager.JOB_TEMPLATE =
-    '<div class="job-container" style="padding: 0.5em;">' +
+    '<div class="job-container mdl-btn-primary" style="padding: 0.5em;">' +
       '<div class="createdBy"></div>' +
       '<div class="createdDate"></div>' +
       '<div class="scheduleDate"></div>' +
       '<div class="location"></div>' +
       '<div class="assignedTo"></div>' +
       '<div class="metaId"></div>' +
+    '</div>';
+
+FieldworkManager.WORKER_TEMPLATE =
+    '<div class="worker-container mdl-btn-primary" style="padding: 0.5em;">' +
+      '<div class="username"></div>' +
+      '<div class="displayName"></div>' +
+      '<div class="isAvailable"></div>' +
     '</div>';
 
 FieldworkManager.prototype.loadJobs = function() {
@@ -84,6 +92,26 @@ FieldworkManager.prototype.loadJobs = function() {
   this.jobsRef.on('child_added', setJob);
   this.jobsRef.on('child_changed', setJob);
   this.jobsRef.on('child_removed', removeJob);
+};
+
+FieldworkManager.prototype.loadWorkers = function() {
+this.workersRef = this.database.ref('workers');
+this.workersRef.off();
+
+var setWorker = function(data) {
+var val = data.val();
+this.displayWorker(data.key, val.username, val.displayName, val.isAvailable);
+}.bind(this);
+
+var removeWorker = function(data){
+var val = data.val();
+var div = document.getElementById(data.key);
+div.parentNode.removeChild(div);
+}.bind(this);
+
+this.workersRef.on('child_added', setWorker);
+this.workersRef.on('child_changed', setWorker);
+this.workersRef.on('child_removed', removeWorker);
 };
 
 FieldworkManager.prototype.displayJob = function(key, createdBy, createdDate, scheduleDate, location, assignedTo, metaId) {
@@ -109,6 +137,30 @@ FieldworkManager.prototype.displayJob = function(key, createdBy, createdDate, sc
 
   setTimeout(function() {div.classList.add('visible')}, 1);
   this.jobList.scrollTop = this.jobList.scrollHeight;
+};
+
+FieldworkManager.prototype.displayWorker = function(key, username, displayName, isAvailable) {
+  var div = document.getElementById(key);
+  if (!div) {
+    var container = document.createElement('div');
+    container.innerHTML = FieldworkManager.WORKER_TEMPLATE;
+    div = container.firstChild;
+    div.setAttribute('id', key);
+    this.workerList.appendChild(div);
+  }
+
+  if (isAvailable === true){
+    isAvailable = "Yes";
+  }else{
+    isAvailable = "No";
+  }
+
+  div.querySelector('.username').textContent = "Username: " + username;
+  div.querySelector('.displayName').textContent = "Display Name: " + displayName;
+  div.querySelector('.isAvailable').textContent = "Available: " + isAvailable;
+
+  setTimeout(function() {div.classList.add('visible')}, 1);
+  this.workerList.scrollTop = this.workerList.scrollHeight;
 };
 
 FieldworkManager.prototype.toggleButton = function() {
