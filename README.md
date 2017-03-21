@@ -13,7 +13,6 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Express](http://expressjs.com/)
-* [firebase-tools](https://www.npmjs.com/package/firebase-tools)
 * [firebase-admin](https://www.npmjs.com/package/firebase-admin/)
 * [Faker](https://www.npmjs.com/package/Faker)
 * [Moment](https://momentjs.com/)
@@ -21,7 +20,6 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `npm install -g firebase-tools`
 * `cd fieldwork-manager`
 * `npm install`
 
