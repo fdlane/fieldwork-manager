@@ -13,5 +13,11 @@ module.exports = function generateJobs(){
     scheduleDate: faker.date.recent(),
     assignedTo: faker.random.arrayElement(usernames),
     isActive: true,
+    images: {
+      "PowerLine.jpg",
+      "meter.jpg",
+      "broken-sign.jpg",
+      "pothole.jpg",
+    },
   }
 };
