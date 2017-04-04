@@ -16,7 +16,7 @@ module.exports = function generateJobs(){
     location: faker.address.streetAddress(),
     metaId: faker.random.number({min: 1000000000, max: 9999999999}),
     scheduleDate: faker.date.recent(),
-    assignedTo: faker.random.arrayElement(usernames),
+    assignedTo: 'UNASSIGNED',
     isActive: true,
     status:'pending',
     jobImage: faker.random.arrayElement(images),
