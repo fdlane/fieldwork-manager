@@ -3,70 +3,89 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <title>Fieldwork Manager</title>
-  <link rel="manifest" href="manifest.json">
+    <meta charset="utf-8">
+    <title>Fieldwork Manager</title>
+    <link rel="manifest" href="manifest.json">
 
-  <!-- Material Design Lite -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <!-- App Styling -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-  <link rel="stylesheet" href="styles/main.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+    <!-- App Styling -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/b03c52441a.js"></script>
 </head>
 
 <body>
 
-  <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
-      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-        <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-          <h3><i class="material-icons">settings</i> Fieldwork Manager</h3>
-        </div>
-        <div id="user-container">
-          <div hidden id="user-pic"></div>
-          <div hidden id="user-name"></div>
-          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+                <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                    <h3><i class="material-icons">settings</i> Fieldwork Manager</h3>
+                </div>
+                <div id="user-container">
+                    <div hidden id="user-pic"></div>
+                    <div hidden id="user-name"></div>
+                    <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
             Sign-out
           </button>
-          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                    <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
             <i class="material-icons">account_circle</i>Sign-in with Google
           </button>
-        </div>
-      </div>
-    </header>
-
-    <main class="mdl-layout__content mdl-color--grey-100">
-
-      <div id="jobs-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
-        <div id="jobs-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
-          <center><h4>JOBS</h4></center>
-          <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            <div id="jobs">
-              <span id="job-filler"></span>
+                </div>
             </div>
-          </div>
-        </div>
+        </header>
 
-        <div id="workers-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
-          <center><h4>WORKERS</h4></center>
-          <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            <div id="workers">
-              <span id="worker-filler"></span>
+        <main class="mdl-layout__content mdl-color--grey-100">
+
+            <div id="jobs-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+                <div id="jobs-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+                    <center>
+                        <h4>JOBS</h4></center>
+                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                        <div id="jobs">
+                            <span id="job-filler"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="workers-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+                    <center>
+                        <h4>WORKERS</h4></center>
+                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                        <div id="workers">
+                            <span id="worker-filler"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-    </main>
-  </div>
+        </main>
+        <footer>
+            <div class="text-center">
+                <a href="https://github.com/fdlane/fieldwork-manager" style="color:#000000"; target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+            </div>
+        </footer>
+    </div>
 
-  <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-  <script src="scripts/config.js"></script>
-  <script src="scripts/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/main.js"></script>
 
 </body>
 
