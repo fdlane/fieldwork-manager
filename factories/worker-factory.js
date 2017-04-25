@@ -21,7 +21,7 @@ module.exports = function generateWorker(i){
     editedBy: "",
     editedDate: null,
     isAvailable:  faker.random.boolean(),
-    jobCount: 10,
+    jobCount: 0,
     isActive: true,
   }
 };
