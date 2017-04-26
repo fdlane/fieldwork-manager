@@ -32,21 +32,27 @@
 
 <body>
 
-    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <!--  <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
             <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-                <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                <div class="mdl-layout__header-row mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop ">
+                    <img src="images/team_logo.png" height="100" width="200" class="img-responsive" alt="">
+                </div>
+
+                <div class="mdl-layout__header-row mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop">
                     <h3><i class="material-icons">settings</i> Fieldwork Manager</h3>
                 </div>
-                <div id="user-container">
-                    <div hidden id="user-pic"></div>
-                    <div hidden id="user-name"></div>
-                    <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                <div class="mdl-layout__header-row mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop ">
+                    <div id="user-container">
+                        <div hidden id="user-pic"></div>
+                        <div hidden id="user-name"></div>
+                        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
             Sign-out
           </button>
-                    <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                        <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
             <i class="material-icons">account_circle</i>Sign-in with Google
           </button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -73,20 +79,52 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="images/team_logo.png" height="100" width="200" class="img-responsive" alt="" />
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                        <i class="fa fa-cog fa-3x text-center" aria-hidden="true">FIELDWORK MANAGER</i>
+                    </div>
+                </div>
+        </header>
+        </br>
+
+
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <button type="button" class="btn btn-primary btn-lg btn-block">WORKER</button>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <button type="button" class="btn btn-primary btn-lg btn-block">JOBS</button>
             </div>
 
-        </main>
-        <footer>
-            <div class="text-center">
-                <a href="https://github.com/fdlane/fieldwork-manager" style="color:#000000"; target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
-            </div>
-        </footer>
-    </div>
+            <footer class="footer">
+                <div class="text-center">
+                    <a href="https://github.com/fdlane/fieldwork-manager" style="color:#000000" ; target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                </div>
+            </footer>
+        </div>
+        </div>
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-    <script src="scripts/config.js"></script>
-    <script src="scripts/main.js"></script>
 
-</body>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script src="scripts/config.js"></script>
+        <script src="scripts/main.js"></script>
+
+    </body>
 
 </html>
