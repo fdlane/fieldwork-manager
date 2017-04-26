@@ -20,8 +20,8 @@ module.exports = function generateWorker(i){
     displayName: faker.name.lastName() + ", " + faker.name.firstName(),
     editedBy: "",
     editedDate: null,
-    isAvailable:  faker.random.boolean(),
-    jobCount: 10,
+    isAvailable:  false,
+    jobCount: 0,
     isActive: true,
   }
 };
