@@ -19,6 +19,6 @@ module.exports = function generateJobs(){
     assignedTo: "UNASSIGNED",
     isActive: true,
     status:'Pending',
-    jobImage: faker.random.arrayElement(images),
+    jobImage: '',
   }
 };
